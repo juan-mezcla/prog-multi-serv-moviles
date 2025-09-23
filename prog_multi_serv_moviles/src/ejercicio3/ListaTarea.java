@@ -109,7 +109,7 @@ public class ListaTarea {
 			} catch (java.lang.IndexOutOfBoundsException e) {
 
 				System.err.println("Tienes que poner un numero dentro del rango");
-
+ 
 			}
 		} while (opcion != 2);
 	}
