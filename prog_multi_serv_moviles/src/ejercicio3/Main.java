@@ -11,6 +11,8 @@ public class Main {
 		tareas = new ListaTarea();
 
 		menu(tareas);
+		
+		//Meter las tareas en un fichero.
 
 	}
 
@@ -53,7 +55,10 @@ public class Main {
 				prompt.nextLine();
 				menu(tareas);
 				
-			} 
+			} finally {
+				prompt.close();
+				tareas.prompt.close();
+			}
 		} while (opcion != 7);
 	}
 
