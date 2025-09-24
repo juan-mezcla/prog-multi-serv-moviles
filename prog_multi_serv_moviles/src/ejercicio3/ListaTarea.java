@@ -1,5 +1,8 @@
 package ejercicio3;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -161,6 +164,32 @@ public class ListaTarea {
 				System.out.println("No se han encontrado tareas con esa prioridad o descripcion");;
 			}
 		} while (opcion != 2);
+	}
+	
+	
+	public void anadirTareasFicheros() {
+		String nomArch;
+		System.out.println("Elige el nombre del archivo donde quieres añadir las tareas:");
+		nomArch=prompt.nextLine();
+		
+		File arch=new File("./"+nomArch+".txt");
+		try {
+			if(!arch.createNewFile()) {
+				arch.createNewFile();
+				System.out.println("Archivo creado");
+			}
+			
+  			FileWriter escritura=new FileWriter(arch);
+  			for(Tarea tarea: tareas) {
+  				escritura.write(tarea.toString()+"\n");
+  			}
+  			escritura.close();
+  			System.out.println("Datos introducidos correctamente");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }

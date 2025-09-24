@@ -12,7 +12,6 @@ public class Main {
 
 		menu(tareas);
 		
-		//Meter las tareas en un fichero.
 
 	}
 
@@ -22,7 +21,7 @@ public class Main {
 		do {
 			try {
 				System.out.println(
-						"Elige una de las opciones para la lista de tareas:\n1-Agregar tarea. 2-Modificar tarea. 3-eliminar tarea.\n4-Mostrar tareas. 5-Mostrar tareas completadas. 6-Buscar tarea. 7-Salir.");
+						"Elige una de las opciones para la lista de tareas:\n1-Agregar tarea. 2-Modificar tarea. 3-eliminar tarea.\n4-Mostrar tareas. 5-Mostrar tareas completadas. 6-Buscar tarea. 7-añadir tareas a ficheros. 8-Salir.");
 				opcion = prompt.nextInt();
 
 				switch (opcion) {
@@ -47,6 +46,10 @@ public class Main {
 					tareas.buscarTareas();
 					break;
 				case 7:
+					//Meter las tareas en un fichero.
+					tareas.anadirTareasFicheros();
+					break;
+				case 8:
 					System.out.println("Hasta luego.");
 					break;
 				}
